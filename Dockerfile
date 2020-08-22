@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-devel
+FROM python:3.6.12
 
 MAINTAINER TRINH Quoc Anh "trinhquocanh94@gmail.com"
 
