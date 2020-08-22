@@ -340,7 +340,7 @@ def test_calculate_kstest(fn):
     fn_correct_outputs = OrderedDict(
         [
             ("ks_values", pd.Series([0.29787827, 0.35221525, 0.63919407], tickers)),
-            ("p_values", pd.Series([0.69536353, 0.46493498, 0.01650327], tickers)),
+            ("p_values", pd.Series([0.67234149, 0.46161172, 0.01650327], tickers)),
         ]
     )
 
