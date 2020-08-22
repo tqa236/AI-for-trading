@@ -15,4 +15,5 @@ docker run -it --rm -v $PWD:/workspace/AI-for-trading -p 8888:8888 ai-for-tradin
 ## TODO:
 
 -   Test all projects
+-   Add a variable to build a customized Docker image for each project
 -   Add Colab badge for independent run
