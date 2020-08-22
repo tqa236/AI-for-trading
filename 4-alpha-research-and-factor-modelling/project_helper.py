@@ -8,18 +8,18 @@ from zipline.pipeline.loaders import USEquityPricingLoader
 from zipline.utils.numpy_utils import int64_dtype
 
 
-EOD_BUNDLE_NAME = 'eod-quotemedia'
+EOD_BUNDLE_NAME = "eod-quotemedia"
 
 
 class PricingLoader(object):
     def __init__(self, bundle_data):
         self.loader = USEquityPricingLoader(
-            bundle_data.equity_daily_bar_reader,
-            bundle_data.adjustment_reader)
+            bundle_data.equity_daily_bar_reader, bundle_data.adjustment_reader
+        )
 
     def get_loader(self, column):
         if column not in USEquityPricing.columns:
-            raise Exception('Column not in USEquityPricing')
+            raise Exception("Column not in USEquityPricing")
         return self.loader
 
 
@@ -30,14 +30,10 @@ class Sector(Classifier):
     missing_value = -1
 
     def __init__(self):
-        self.data = np.load('../../data/project_4_sector/data.npy')
+        self.data = np.load("../../data/project_4_sector/data.npy")
 
     def _compute(self, arrays, dates, assets, mask):
-        return np.where(
-            mask,
-            self.data[assets],
-            self.missing_value,
-        )
+        return np.where(mask, self.data[assets], self.missing_value,)
 
 
 def build_pipeline_engine(bundle_data, trading_calendar):
@@ -46,7 +42,8 @@ def build_pipeline_engine(bundle_data, trading_calendar):
     engine = SimplePipelineEngine(
         get_loader=pricing_loader.get_loader,
         calendar=trading_calendar.all_sessions,
-        asset_finder=bundle_data.asset_finder)
+        asset_finder=bundle_data.asset_finder,
+    )
 
     return engine
 
