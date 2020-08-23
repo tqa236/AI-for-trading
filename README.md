@@ -25,4 +25,4 @@ docker push tqa236/ai-for-trading:latest
 -   P8: data
 -   Add a variable to build a customized Docker image for each project
 -   Add Colab badge for independent run
--   Run unittest for all projects
+-   Run unittest for all projects (testbook, treon)
