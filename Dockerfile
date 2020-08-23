@@ -2,7 +2,8 @@ FROM python:3.6.12
 
 MAINTAINER TRINH Quoc Anh "trinhquocanh94@gmail.com"
 
-RUN pip install notebook
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
 ENV TINI_VERSION v0.6.0
