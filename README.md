@@ -15,7 +15,8 @@ docker run -it --rm -v $PWD:/workspace/AI-for-trading -p 8888:8888 ai-for-tradin
 ## TODO:
 
 -   Test all projects
--   P5: yr-quotemedia.csv
+-   P8: data
 -   Add a variable to build a customized Docker image for each project
 -   Add Colab badge for independent run
 -   Upload the ready-to-use Docker image to Docker Hub
+-   Run unittest for all projects
